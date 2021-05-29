@@ -14,7 +14,7 @@ function App() {
   // Main function
   const runCoco = async () => {
     // 3. TODO - Load network 
-    const net = await tf.loadGraphModel('https://gesturesdetection.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json')
+    const net = await tf.loadGraphModel(process.env.REACT_APP_MODEL_URL)
 
     // Loop and detect hands
     setInterval(() => {
