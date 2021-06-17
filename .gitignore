@@ -2,3 +2,16 @@
 
 # dependencies
 node_modules
+build/asset-manifest.json
+build/index.html
+build/precache-manifest.45520e382461a5c201cdc093f9bfea9b.js
+build/service-worker.js
+build/static/css/main.523f09c5.chunk.css
+build/static/css/main.523f09c5.chunk.css.map
+build/static/js/2.2eeaaac2.chunk.js
+build/static/js/2.2eeaaac2.chunk.js.LICENSE.txt
+build/static/js/2.2eeaaac2.chunk.js.map
+build/static/js/main.986b0408.chunk.js
+build/static/js/main.986b0408.chunk.js.map
+build/static/js/runtime-main.743d20cc.js
+build/static/js/runtime-main.743d20cc.js.map

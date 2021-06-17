@@ -1,9 +1,8 @@
 // Import dependencies
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import "./App.css";
-import { nextFrame } from "@tensorflow/tfjs";
 // 2. TODO - Import drawing utility here
 import { drawRect } from "./utilities";
 
@@ -12,15 +11,6 @@ function App() {
   const canvasRef = useRef(null);
 
   // Main function
-  const runCoco = async () => {
-    // 3. TODO - Load network 
-    const net = await tf.loadGraphModel(process.env.REACT_APP_MODEL_URL)
-
-    // Loop and detect hands
-    setInterval(() => {
-      detect(net);
-    }, 16.7);
-  };
 
   const detect = async (net) => {
     // Check data is available
@@ -71,7 +61,17 @@ function App() {
     }
   };
 
-  useEffect(() => { runCoco() }, []);
+  useEffect(() => {
+    const runCoco = async () => {
+      // 3. TODO - Load network 
+      const net = await tf.loadGraphModel(process.env.REACT_APP_MODEL_URL)
+
+      // Loop and detect hands
+      setInterval(() => {
+        detect(net);
+      }, 16.7);
+    }; runCoco()
+  }, []);
 
   return (
     <div className="App">
